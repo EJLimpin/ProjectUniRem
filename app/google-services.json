@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "861473262339",
+    "firebase_url": "https://unirem-71fca.firebaseio.com",
+    "project_id": "unirem-71fca",
+    "storage_bucket": "unirem-71fca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861473262339:android:452ccb0384cdb644",
+        "android_client_info": {
+          "package_name": "com.unirem.unirem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861473262339-2mpaffmo9j96dd0sfd5fp6jodnsesdh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChCk3WThOaDQvr2H1qPSpdrHwSlwk0ZBY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
