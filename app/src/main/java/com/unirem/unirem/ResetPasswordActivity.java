@@ -1,5 +1,6 @@
 package com.unirem.unirem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -73,6 +74,8 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
         if(view == btnBack){
             finish();
+
+            startActivity(new Intent(this, LoginActivity.class));
         }
 
 
