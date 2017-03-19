@@ -17,14 +17,18 @@
         android:weightSum="1">
 
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></LinearLayout>
+
         <TextView
             android:text="Choose a college... "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:textStyle="normal|bold"
-            android:textSize="24sp"
-            android:textColor="@color/colorAccent" />
+            android:textSize="30sp" />
 
         <Button
             android:text="NCI"
@@ -79,11 +83,17 @@
             android:padding="15dp"
             />
 
-        <Button
-            android:text="Logout"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonLogout" />
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonLogout" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
