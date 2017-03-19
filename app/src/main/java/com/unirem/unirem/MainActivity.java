@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         if(view == buttonNCI){
-            finish();
+
             //starting login activity
-            startActivity(new Intent(this, NCI_eventActivity.class));
+            startActivity(new Intent(this, Nci_events_PageActivity.class));
 
         }
         if (view == buttonLogout) {

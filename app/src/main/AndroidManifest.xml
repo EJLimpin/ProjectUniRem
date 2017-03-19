@@ -10,11 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity">
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,17 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </activity>
-        <activity android:name=".ResetPasswordActivity">
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </activity>
-        <activity android:name=".NCI_eventActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".Nci_events_PageActivity" />
+        <activity android:name=".AddEventActivity"></activity>
     </application>
+
 
 </manifest>
