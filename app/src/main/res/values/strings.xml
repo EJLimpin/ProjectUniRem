@@ -5,4 +5,9 @@
     <string name="btn_reset_password">Reset Password</string>
     <string name="btn_back"><![CDATA[<< Back]]></string>
     <string name="hint_email">Email</string>
+    <string-array name="Privacy_type">
+        <item>Private Event</item>
+        <item>Public Event</item>
+
+    </string-array>
 </resources>
