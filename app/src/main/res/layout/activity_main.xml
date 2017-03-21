@@ -18,17 +18,18 @@
 
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
 
         <TextView
-            android:text="Choose a college... "
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textStyle="normal|bold"
-            android:textSize="30sp" />
+            android:fontFamily="monospace"
+            android:text="Choose a college... "
+            android:textSize="30sp"
+            android:textStyle="normal|bold" />
 
         <Button
             android:text="NCI"
@@ -51,16 +52,17 @@
             android:textSize="46sp"
             android:layout_margin="15dp"
             android:padding="15dp"/>
+
         <Button
-            android:text="Trinity"
+            android:id="@+id/buttonTrinity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonTrinity"
-            android:textColor="@android:color/white"
-            android:background="#9BDBDE"
-            android:textSize="46sp"
             android:layout_margin="15dp"
-            android:padding="15dp"/>
+            android:background="#9BDBDE"
+            android:padding="15dp"
+            android:text="Trinity"
+            android:textColor="@android:color/white"
+            android:textSize="46sp" />
         <Button
             android:text="UCD"
             android:layout_width="match_parent"
