@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,9 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth firebaseAuth;
 
     //view objects
-    private Button buttonNCI;
+    private ImageButton buttonNCI;
     private Button buttonDIT;
-    private Button buttonTrinity;
+    private Button buttonTCD;
     private Button buttonUCD;
     private Button buttonDCU;
     private Button buttonLogout;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //initializing views
-        buttonNCI =(Button) findViewById(R.id.buttonNCI);
+        buttonNCI =(ImageButton) findViewById(R.id.buttonNCI);
         buttonLogout=(Button) findViewById(R.id.buttonLogout);
 
 

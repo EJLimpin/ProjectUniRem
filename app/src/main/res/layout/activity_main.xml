@@ -5,7 +5,6 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9BDBDE"
     tools:context="com.unirem.unirem.MainActivity">
 
 
@@ -14,88 +13,76 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
         android:weightSum="1">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Choose a college... "
+            android:text="Choose a college:"
             android:textSize="30sp"
             android:textStyle="normal|bold" />
 
-        <Button
-            android:text="NCI"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageButton
             android:id="@+id/buttonNCI"
-            android:textColor="@android:color/white"
-            android:background="#9BDBDE"
-            android:textSize="46sp"
-            android:layout_margin="15dp"
-            android:padding="15dp"
-            />
-        <Button
-            android:text="DIT"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonDIT"
-            android:textColor="@android:color/white"
-            android:background="#9BDBDE"
-            android:textSize="46sp"
-            android:layout_margin="15dp"
-            android:padding="15dp"/>
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="#000000"
+            app:srcCompat="@drawable/bannernci" />
 
-        <Button
-            android:id="@+id/buttonTrinity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="#9BDBDE"
-            android:padding="15dp"
-            android:text="Trinity"
-            android:textColor="@android:color/white"
-            android:textSize="46sp" />
-        <Button
-            android:text="UCD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageButton
             android:id="@+id/buttonUCD"
-            android:textColor="@android:color/white"
-            android:background="#9BDBDE"
-            android:textSize="46sp"
-            android:layout_margin="15dp"
-            android:padding="15dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="#000000"
+            app:srcCompat="@drawable/bannerucd" />
+
+        <ImageButton
+            android:id="@+id/buttonDIT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="#000000"
+            app:srcCompat="@drawable/bannerdit" />
+
+        <ImageButton
+            android:id="@+id/buttonTCD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="#000000"
+            app:srcCompat="@drawable/bannertcd" />
+
+        <ImageButton
+            android:id="@+id/buttonDCU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="#000000"
+            app:srcCompat="@drawable/bannerdcu" />
+
         <Button
-            android:text="DCU"
+            android:id="@+id/buttonLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonDCU"
-            android:textColor="@android:color/white"
-            android:background="#9BDBDE"
-            android:textSize="46sp"
-            android:layout_margin="15dp"
-            android:padding="15dp"
-            />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:text="Logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonLogout" />
-        </LinearLayout>
+            android:text="Logout" />
 
     </LinearLayout>
 </ScrollView>

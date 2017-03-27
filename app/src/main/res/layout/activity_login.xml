@@ -80,7 +80,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="234dp"
+            android:layout_height="211dp"
             app:srcCompat="@drawable/logo"
             android:id="@+id/imageView2" />
     </FrameLayout>
