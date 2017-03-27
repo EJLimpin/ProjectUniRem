@@ -3,7 +3,8 @@
     <color name="colorPrimary">#04bbd1</color>
     <color name="colorPrimaryDark">#04cad4</color>
     <color name="colorAccent">#ff4081</color>
-    <color name="logocolor">#72C4AD</color>
+    <color name="logocolor">#72c4ad</color>
     <color name="textandstuff">#000000</color>
+    <color name="greyoutlin">#4F4F4F</color>
 
 </resources>
