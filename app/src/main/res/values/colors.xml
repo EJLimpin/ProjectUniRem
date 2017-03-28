@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#04bbd1</color>
-    <color name="colorPrimaryDark">#04cad4</color>
+    <color name="colorPrimary">#9c27b0</color>
+    <color name="colorPrimaryDark">#080808</color>
     <color name="colorAccent">#ff4081</color>
     <color name="logocolor">#72c4ad</color>
     <color name="textandstuff">#000000</color>
     <color name="greyoutlin">#4F4F4F</color>
+    <color name="primary_text_default_material_light">#deffffff</color>
 
 </resources>

@@ -30,8 +30,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:text="Choose a college:"
-            android:textSize="30sp"
-            android:textStyle="normal|bold" />
+            android:background="#000000"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <ImageButton
             android:id="@+id/buttonNCI"

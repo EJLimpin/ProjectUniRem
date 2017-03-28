@@ -42,12 +42,12 @@
             android:textColor="#000000" />
 
         <Button
-            android:text="Login"
+            android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:background="#33FFBD"
-            android:id="@+id/buttonLogin"
+            android:background="#FF9C27B0"
+            android:text="Login"
             android:textColor="?android:attr/textColorPrimaryInverseNoDisable" />
 
         <TextView
