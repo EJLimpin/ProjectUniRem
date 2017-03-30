@@ -25,7 +25,9 @@
             android:background="@android:color/holo_red_light"
             android:paddingLeft="10dp"
             android:text="Event Name"
-            android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_title"
@@ -40,7 +42,9 @@
             android:background="@android:color/holo_blue_dark"
             android:paddingLeft="10dp"
             android:text="Event Details"
-            android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_Details"
@@ -55,7 +59,9 @@
             android:background="@android:color/holo_blue_dark"
             android:paddingLeft="10dp"
             android:text="Event Location"
-            android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_Locations"
@@ -68,15 +74,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_red_light"
+            android:lineSpacingExtra="18sp"
             android:paddingLeft="10dp"
             android:text="EventDate_Time"
-            android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_Date_and_Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="@android:color/holo_red_dark" />
 
         <TextView
             android:id="@+id/eventprivacy"
@@ -85,16 +95,16 @@
             android:background="@android:color/holo_red_light"
             android:paddingLeft="10dp"
             android:text="Privacytype"
-            android:textColor="@android:color/white" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_privacy"
-            android:padding="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@android:color/holo_red_dark" />
 
 
     </LinearLayout>

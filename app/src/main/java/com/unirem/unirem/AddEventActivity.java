@@ -2,7 +2,6 @@ package com.unirem.unirem;
 
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -33,11 +32,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.List;
+import java.util.UUID;
 
 
 public class AddEventActivity extends AppCompatActivity  {
@@ -47,8 +44,8 @@ public class AddEventActivity extends AppCompatActivity  {
     private Button btnDate, btnTime;
     private EditText etDate_Time_Picker;
     private EditText etEventTitle, etEventLocation, etEventDetails;
-    private ImageButton ibEvent;
-    private Uri ibEventUri = null;
+    private ImageButton imageButtonEvent;
+    private Uri imageUri = null;
 
     private int day, month, year, hour, minute;
     DateFormat formatDateTime = DateFormat.getDateTimeInstance();
@@ -79,7 +76,7 @@ public class AddEventActivity extends AppCompatActivity  {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
 
         tvDropdown = (TextView) findViewById(R.id.tvDropdown);
-        ibEvent = (ImageButton) findViewById(R.id.ibEvent);
+        imageButtonEvent = (ImageButton) findViewById(R.id.imageButtonEvent);
         etEventTitle = (EditText) findViewById(R.id.etEventTitle);
         etEventDetails = (EditText) findViewById(R.id.etEventDetails);
         etEventLocation = (EditText) findViewById(R.id.etEventLocation);
@@ -102,7 +99,7 @@ public class AddEventActivity extends AppCompatActivity  {
         btnTime = (Button) findViewById(R.id.btnTime);
 
 
-        ibEvent.setOnClickListener(new View.OnClickListener() {
+        imageButtonEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -197,23 +194,23 @@ public class AddEventActivity extends AppCompatActivity  {
         final String  spinner_val = spinner.getSelectedItem().toString();
 
         if (!TextUtils.isEmpty(etEventTitle_val) && !TextUtils.isEmpty(etEventLocation_val) && !TextUtils.isEmpty(etEventDetails_val)
-                && ibEventUri !=null){
-            Uri file = Uri.fromFile(new File("path/to/images/event_images.jpg"));
-            StorageReference Event_images = storage.child("images/event_images.jpg");
+                && imageUri !=null){
 
-            Event_images.putFile(ibEventUri)
+                StorageReference Filepath = storage.child("EventImages").child(imageUri.getLastPathSegment() + UUID.randomUUID());
+
+            Filepath.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                            @SuppressWarnings("VisibleForTests")   Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             DatabaseReference newPost = mDatabase.push();
                             newPost.child("Event_Title").setValue(etEventTitle_val);
                             newPost.child("Event_Details").setValue(etEventDetails_val);
                             newPost.child("Event_Location").setValue(etEventLocation_val);
                             newPost.child("Event_Date _and _Time").setValue(etDate_time_Picker_val);
-                            newPost.child("Privacy type").setValue(spinner_val);
-                            newPost.child("images").setValue(ibEventUri);
+                            newPost.child("Privacytype").setValue(spinner_val);
+                            newPost.child("images").setValue(downloadUrl.toString());
 
                          mProgress.dismiss();
                             Toast.makeText(getApplicationContext(),"Posted event to NCI page",Toast.LENGTH_LONG).show();
@@ -242,8 +239,8 @@ public class AddEventActivity extends AppCompatActivity  {
 
         if (requestCode==Gallery_Request && resultCode==RESULT_OK){
 
-            ibEventUri = data.getData();
-            ibEvent.setImageURI(ibEventUri);
+            imageUri = data.getData();
+            imageButtonEvent.setImageURI(imageUri);
 
 
         }

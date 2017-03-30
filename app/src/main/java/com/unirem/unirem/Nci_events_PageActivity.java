@@ -1,5 +1,6 @@
 package com.unirem.unirem;
 
+import android.content.Context;
 import android.content.Intent;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class Nci_events_PageActivity extends AppCompatActivity  {
 
@@ -94,6 +97,7 @@ public class Nci_events_PageActivity extends AppCompatActivity  {
                  viewHolder.setEvent_Location(model.getEvent_Location());
                  viewHolder.setEvent_Date_and_Time(model.getEvent_Date_and_Time());
                  viewHolder.setPrivacytype(model.getPrivacytype());
+                 viewHolder.setImages(getApplicationContext(),model.getImages());
 
             }
         };
@@ -138,6 +142,11 @@ public class Nci_events_PageActivity extends AppCompatActivity  {
             post_privacy.setText(Privacytype);
         }
 
+        public void setImages(Context ctx,String images){
+            ImageView post_image = (ImageView) mView.findViewById(R.id.post_image);
+            Picasso.with(ctx).load(images).into(post_image);
+
+        }
 
 
     }

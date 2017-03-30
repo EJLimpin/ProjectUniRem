@@ -89,6 +89,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+
+
         //if the email and password are not empty
         //displaying a progress dialog
 
