@@ -209,7 +209,7 @@ public class AddEventActivity extends AppCompatActivity  {
                             newPost.child("Event_Details").setValue(etEventDetails_val);
                             newPost.child("Event_Location").setValue(etEventLocation_val);
                             newPost.child("Event_Date _and _Time").setValue(etDate_time_Picker_val);
-                            newPost.child("Privacytype").setValue(spinner_val);
+                            newPost.child("Privacy_type").setValue(spinner_val);
                             newPost.child("images").setValue(downloadUrl.toString());
 
                          mProgress.dismiss();

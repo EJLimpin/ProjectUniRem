@@ -83,6 +83,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
 
         }
+        //checks if the email has at least 6 characters and also checks if the first character is an "x"
+
 
         if (password.length() < 6) {
             Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();

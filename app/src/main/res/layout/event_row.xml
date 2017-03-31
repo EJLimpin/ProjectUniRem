@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_margin="20dp"
     android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E0E4CC"
         android:orientation="vertical">
 
         <ImageView
@@ -17,17 +19,6 @@
             android:padding="10dp"
             android:scaleType="centerCrop"
             app:srcCompat="@mipmap/add_btn" />
-
-        <TextView
-            android:id="@+id/evennt_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:paddingLeft="10dp"
-            android:text="Event Name"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/post_title"
@@ -48,9 +39,9 @@
 
         <TextView
             android:id="@+id/post_Details"
-            android:padding="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/event_Location"
@@ -65,9 +56,9 @@
 
         <TextView
             android:id="@+id/post_Locations"
-            android:padding="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/eventDate_time"
@@ -85,8 +76,7 @@
             android:id="@+id/post_Date_and_Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_red_dark" />
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/eventprivacy"
@@ -103,8 +93,7 @@
             android:id="@+id/post_privacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@android:color/holo_red_dark" />
+            android:padding="10dp" />
 
 
     </LinearLayout>

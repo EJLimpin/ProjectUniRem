@@ -6,26 +6,24 @@ package com.unirem.unirem;
 
 public class Events {
 
-    private String Event_Title;
-    private String Event_Details;
-    private String Event_Location;
-    private String Event_Date_and_Time;
-    private String Privacytype;
-    private String images;
-
-
-    private Events(){
-
-
-    }
+     private String Event_Title;
+     private String Event_Details;
+     private String Event_Location;
+     private String Event_Date_and_Time;
+     private String Privacytype;
+     private String images;
 
     public Events(String event_Title, String event_Details, String event_Location, String event_Date_and_Time, String privacytype, String images) {
         this.Event_Title = event_Title;
         this.Event_Details = event_Details;
-       this.Event_Location = event_Location;
+        this.Event_Location = event_Location;
         this.Event_Date_and_Time = event_Date_and_Time;
         this.Privacytype = privacytype;
         this.images = images;
+    }
+    private Events(){
+
+
     }
 
     public String getEvent_Title() {
@@ -33,7 +31,7 @@ public class Events {
     }
 
     public void setEvent_Title(String event_Title) {
-        this.Event_Title = event_Title;
+        Event_Title = event_Title;
     }
 
     public String getEvent_Details() {
@@ -41,7 +39,7 @@ public class Events {
     }
 
     public void setEvent_Details(String event_Details) {
-        this.Event_Details = event_Details;
+        Event_Details = event_Details;
     }
 
     public String getEvent_Location() {
@@ -49,7 +47,7 @@ public class Events {
     }
 
     public void setEvent_Location(String event_Location) {
-        this.Event_Location = event_Location;
+        Event_Location = event_Location;
     }
 
     public String getEvent_Date_and_Time() {
@@ -57,7 +55,7 @@ public class Events {
     }
 
     public void setEvent_Date_and_Time(String event_Date_and_Time) {
-        this.Event_Date_and_Time = event_Date_and_Time;
+        Event_Date_and_Time = event_Date_and_Time;
     }
 
     public String getPrivacytype() {
@@ -65,7 +63,7 @@ public class Events {
     }
 
     public void setPrivacytype(String privacytype) {
-        this.Privacytype = privacytype;
+        Privacytype = privacytype;
     }
 
     public String getImages() {

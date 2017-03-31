@@ -79,13 +79,5 @@
             android:background="#000000"
             app:srcCompat="@drawable/bannerdcu" />
 
-        <Button
-            android:id="@+id/buttonLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FF9C27B0"
-            android:textColor="#FFFFFF"
-            android:text="Logout" />
-
     </LinearLayout>
 </ScrollView>
