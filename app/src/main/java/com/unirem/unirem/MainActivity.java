@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //if the user is not logged in
         //that means current user will return null
-        if(firebaseAuth.getCurrentUser() == null){
+        if (firebaseAuth.getCurrentUser() == null) {
             //closing this activity
             finish();
             //starting login activity
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //initializing views
-        buttonNCI =(ImageButton) findViewById(R.id.buttonNCI);
+        buttonNCI = (ImageButton) findViewById(R.id.buttonNCI);
 
         //adding listener to button
         buttonNCI.setOnClickListener(this);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main_menutwo,menu);
+        getMenuInflater().inflate(R.menu.main_menutwo, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        if(view == buttonNCI){
+        if (view == buttonNCI) {
 
             //starting login activity
             startActivity(new Intent(this, Nci_events_PageActivity.class));

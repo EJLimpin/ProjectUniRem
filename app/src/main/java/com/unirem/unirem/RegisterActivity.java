@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         firebaseAuth = FirebaseAuth.getInstance();
 
         //if getCurrentUser does not returns null
-        if(firebaseAuth.getCurrentUser() != null){
+        if (firebaseAuth.getCurrentUser() != null) {
             //that means user is already logged in
             //so close this activity
             finish();
@@ -66,20 +66,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private void registerUser(){
+    private void registerUser() {
 
         //getting email and password from edit texts
         String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
         //checking if email and passwords are empty
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
             return;
 
         }
@@ -90,7 +90,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
             return;
         }
-
 
 
         //if the email and password are not empty
@@ -105,13 +104,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //display some message here
-                            Toast.makeText(RegisterActivity.this,"Successfully registered",Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Successfully registered", Toast.LENGTH_LONG).show();
+                            finish();
+                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
 
-                        }else{
+                        } else {
                             //display some message here
-                            Toast.makeText(RegisterActivity.this,"Registration Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Registration Error", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
@@ -122,16 +123,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
 
-        if(view == buttonRegister){
+        if (view == buttonRegister) {
             registerUser();
         }
 
-        if(view == textViewLogin){
+        if (view == textViewLogin) {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
 
-        if(view == textviewResetPassword){
+        if (view == textviewResetPassword) {
             finish();
             startActivity(new Intent(this, ResetPasswordActivity.class));
         }

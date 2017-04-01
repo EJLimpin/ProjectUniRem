@@ -6,12 +6,12 @@ package com.unirem.unirem;
 
 public class Events {
 
-     private String Event_Title;
-     private String Event_Details;
-     private String Event_Location;
-     private String Event_Date_and_Time;
-     private String Privacytype;
-     private String images;
+    private String Event_Title;
+    private String Event_Details;
+    private String Event_Location;
+    private String Event_Date_and_Time;
+    private String Privacytype;
+    private String images;
 
     public Events(String event_Title, String event_Details, String event_Location, String event_Date_and_Time, String privacytype, String images) {
         this.Event_Title = event_Title;
@@ -21,7 +21,8 @@ public class Events {
         this.Privacytype = privacytype;
         this.images = images;
     }
-    private Events(){
+
+    private Events() {
 
 
     }

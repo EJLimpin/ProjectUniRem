@@ -37,12 +37,12 @@ import java.util.Calendar;
 import java.util.UUID;
 
 
-public class AddEventActivity extends AppCompatActivity  {
+public class AddEventActivity extends AppCompatActivity {
 
 
     private Button btnCreate, btnCancel;
     private Button btnDate, btnTime;
-    private EditText etDate_Time_Picker;
+    private EditText etEventDateAndTime;
     private EditText etEventTitle, etEventLocation, etEventDetails;
     private ImageButton imageButtonEvent;
     private Uri imageUri = null;
@@ -56,7 +56,6 @@ public class AddEventActivity extends AppCompatActivity  {
     private Spinner spinner;
     private ArrayAdapter<CharSequence> adapter;
     private ProgressDialog mProgress;
-    private static final int Dialog_ID = 1;
 
     private FirebaseAuth firebaseAuth;
     private StorageReference storage;
@@ -80,7 +79,7 @@ public class AddEventActivity extends AppCompatActivity  {
         etEventTitle = (EditText) findViewById(R.id.etEventTitle);
         etEventDetails = (EditText) findViewById(R.id.etEventDetails);
         etEventLocation = (EditText) findViewById(R.id.etEventLocation);
-        etDate_Time_Picker = (EditText) findViewById(R.id.etDate_Time_Picker);
+        etEventDateAndTime = (EditText) findViewById(R.id.etDate_Time_Picker);
 
 
         //spinner that will hold the privacy type
@@ -146,9 +145,6 @@ public class AddEventActivity extends AppCompatActivity  {
     }
 
 
-
-
-
     private void updateDate() {
 
         new DatePickerDialog(this, d, dateTime.get(Calendar.YEAR), dateTime.get(Calendar.MONTH), dateTime.get(Calendar.DAY_OF_MONTH)).show();
@@ -179,7 +175,7 @@ public class AddEventActivity extends AppCompatActivity  {
     };
 
     private void updateTextLabel() {
-        etDate_Time_Picker.setText(formatDateTime.format(dateTime.getTime()));
+        etEventDateAndTime.setText(formatDateTime.format(dateTime.getTime()));
     }
 
 
@@ -188,22 +184,22 @@ public class AddEventActivity extends AppCompatActivity  {
         mProgress.setMessage("Posting to Event... ");
         mProgress.show();
         final String etEventTitle_val = etEventTitle.getText().toString().trim();
-        final String etEventLocation_val =etEventLocation.getText().toString().trim();
-        final String etEventDetails_val =etEventDetails.getText().toString().trim();
-        final String etDate_time_Picker_val = etDate_Time_Picker.getText().toString().trim();
-        final String  spinner_val = spinner.getSelectedItem().toString();
+        final String etEventLocation_val = etEventLocation.getText().toString().trim();
+        final String etEventDetails_val = etEventDetails.getText().toString().trim();
+        final String etDate_time_Picker_val = etEventDateAndTime.getText().toString();
+        final String spinner_val = spinner.getSelectedItem().toString().trim();
 
         if (!TextUtils.isEmpty(etEventTitle_val) && !TextUtils.isEmpty(etEventLocation_val) && !TextUtils.isEmpty(etEventDetails_val)
-                && imageUri !=null){
+                && imageUri != null) {
 
-                StorageReference Filepath = storage.child("EventImages").child(imageUri.getLastPathSegment() + UUID.randomUUID());
+            StorageReference Filepath = storage.child("EventImages").child(imageUri.getLastPathSegment() + UUID.randomUUID());
 
             Filepath.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            @SuppressWarnings("VisibleForTests")   Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                            @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             DatabaseReference newPost = mDatabase.push();
                             newPost.child("Event_Title").setValue(etEventTitle_val);
                             newPost.child("Event_Details").setValue(etEventDetails_val);
@@ -212,17 +208,17 @@ public class AddEventActivity extends AppCompatActivity  {
                             newPost.child("Privacy_type").setValue(spinner_val);
                             newPost.child("images").setValue(downloadUrl.toString());
 
-                         mProgress.dismiss();
-                            Toast.makeText(getApplicationContext(),"Posted event to NCI page",Toast.LENGTH_LONG).show();
+                            mProgress.dismiss();
+                            Toast.makeText(getApplicationContext(), "Posted event to NCI page", Toast.LENGTH_LONG).show();
 
-                            startActivity(new Intent(AddEventActivity.this,Nci_events_PageActivity.class));
+                            startActivity(new Intent(AddEventActivity.this, Nci_events_PageActivity.class));
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             // Handle unsuccessful uploads
-                            Toast.makeText(getApplicationContext(),exception.getMessage(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
 
                         }
                     });
@@ -237,7 +233,7 @@ public class AddEventActivity extends AppCompatActivity  {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode==Gallery_Request && resultCode==RESULT_OK){
+        if (requestCode == Gallery_Request && resultCode == RESULT_OK) {
 
             imageUri = data.getData();
             imageButtonEvent.setImageURI(imageUri);
@@ -249,10 +245,8 @@ public class AddEventActivity extends AppCompatActivity  {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
-
-
 
 
     }
@@ -260,13 +254,13 @@ public class AddEventActivity extends AppCompatActivity  {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId()==R.id.action_home){
+        if (item.getItemId() == R.id.action_home) {
 
-            startActivity(new Intent(AddEventActivity.this,MainActivity.class));
+            startActivity(new Intent(AddEventActivity.this, MainActivity.class));
 
         }
 
-        if (item.getItemId()==R.id.action_logout){
+        if (item.getItemId() == R.id.action_logout) {
             firebaseAuth.signOut();
             //closing activity
             finish();

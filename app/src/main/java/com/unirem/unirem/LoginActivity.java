@@ -17,8 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     //defining views
@@ -48,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //if the objects getcurrentuser method is not null
         //means user is already logged in
-       if(firebaseAuth.getCurrentUser() != null){
+        if (firebaseAuth.getCurrentUser() != null) {
             //close this activity
             finish();
             //opening profile activity
@@ -59,8 +58,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        textViewSignUp  = (TextView) findViewById(R.id.textViewSignUp);
-        textViewResetPassword=(TextView) findViewById(R.id.textViewResetPassword);
+        textViewSignUp = (TextView) findViewById(R.id.textViewSignUp);
+        textViewResetPassword = (TextView) findViewById(R.id.textViewResetPassword);
 
         progressDialog = new ProgressDialog(this);
 
@@ -71,19 +70,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     //method for user login
-    private void userLogin(){
+    private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
 
         //checking if email and passwords are empty
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -97,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         //if the task is successfull
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //start the profile activity
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -109,15 +108,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view == buttonLogin ){
+        if (view == buttonLogin) {
             userLogin();
         }
 
-        if(view == textViewSignUp){
+        if (view == textViewSignUp) {
             finish();
             startActivity(new Intent(this, RegisterActivity.class));
         }
-        if(view == textViewResetPassword){
+        if (view == textViewResetPassword) {
             finish();
             startActivity(new Intent(this, ResetPasswordActivity.class));
         }
