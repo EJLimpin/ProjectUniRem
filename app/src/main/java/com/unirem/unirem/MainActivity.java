@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //view objects
     private ImageButton buttonNCI;
-    private Button buttonDIT;
-    private Button buttonTCD;
-    private Button buttonUCD;
-    private Button buttonDCU;
+    private ImageButton buttonDIT;
+    private ImageButton buttonTCD;
+    private ImageButton buttonUCD;
+    private ImageButton buttonDCU;
 
 
     @Override
@@ -48,9 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //initializing views
         buttonNCI = (ImageButton) findViewById(R.id.buttonNCI);
+        buttonDIT = (ImageButton) findViewById(R.id.buttonDIT);
+        buttonDCU = (ImageButton) findViewById(R.id.buttonDCU);
 
         //adding listener to button
         buttonNCI.setOnClickListener(this);
+        buttonDIT.setOnClickListener(this);
+        buttonDCU.setOnClickListener(this);
 
     }
 
@@ -83,6 +87,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //starting login activity
             startActivity(new Intent(this, Nci_events_PageActivity.class));
+
+        }
+
+        if (view == buttonDIT) {
+
+            //starting login activity
+            startActivity(new Intent(this, Dit_events_PageActivity.class));
+
+        }
+
+        if (view == buttonDCU) {
+
+            //starting login activity
+            startActivity(new Intent(this, Dcu_events_PageActivity.class));
 
         }
 
