@@ -12,6 +12,7 @@
         android:theme="@style/Purple">
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +31,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".home_page"></activity>
+        <activity android:name=".Ucd_events_PageActivity" />
+        <activity android:name=".Tcd_events_PageActivity" />
+        <activity android:name=".Dit_events_PageActivity" />
+        <activity android:name=".Dcu_events_PageActivity" />
     </application>
 
 </manifest>

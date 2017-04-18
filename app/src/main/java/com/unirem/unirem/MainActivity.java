@@ -50,11 +50,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNCI = (ImageButton) findViewById(R.id.buttonNCI);
         buttonDIT = (ImageButton) findViewById(R.id.buttonDIT);
         buttonDCU = (ImageButton) findViewById(R.id.buttonDCU);
+        buttonTCD = (ImageButton) findViewById(R.id.buttonTCD);
+        buttonUCD = (ImageButton) findViewById(R.id.buttonUCD);
 
         //adding listener to button
         buttonNCI.setOnClickListener(this);
         buttonDIT.setOnClickListener(this);
         buttonDCU.setOnClickListener(this);
+        buttonTCD.setOnClickListener(this);
+        buttonUCD.setOnClickListener(this);
 
     }
 
@@ -93,16 +97,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == buttonDIT) {
 
             //starting login activity
-            //startActivity(new Intent(this, Dit_events_PageActivity.class));
+            startActivity(new Intent(this, Dit_events_PageActivity.class));
 
         }
 
         if (view == buttonDCU) {
 
             //starting login activity
-            //startActivity(new Intent(this, Dcu_events_PageActivity.class));
+            startActivity(new Intent(this, Dcu_events_PageActivity.class));
 
         }
+        if (view == buttonTCD) {
+
+            //starting login activity
+            startActivity(new Intent(this, Tcd_events_PageActivity.class));
+
+        }
+        if (view == buttonUCD) {
+
+            //starting login activity
+            startActivity(new Intent(this, Ucd_events_PageActivity.class));
+
+        }
+
 
 
     }

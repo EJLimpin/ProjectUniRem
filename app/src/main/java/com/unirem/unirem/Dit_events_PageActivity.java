@@ -9,12 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,9 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class Nci_events_PageActivity extends AppCompatActivity {
+public class Dit_events_PageActivity extends AppCompatActivity {
 
-    private RecyclerView NCI_event_list;
+    private RecyclerView DIT_event_list;
     private FirebaseAuth firebaseAuth;
 
     private DatabaseReference mDatabase;
@@ -32,14 +28,14 @@ public class Nci_events_PageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nci_events__page);
+        setContentView(R.layout.activity_dit_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
 
-        NCI_event_list = (RecyclerView) findViewById(R.id.NCI_event_list);
-        NCI_event_list.setHasFixedSize(true);
-        NCI_event_list.setLayoutManager(new LinearLayoutManager(this));
+        DIT_event_list = (RecyclerView) findViewById(R.id.DIT_event_list);
+        DIT_event_list.setHasFixedSize(true);
+        DIT_event_list.setLayoutManager(new LinearLayoutManager(this));
 
 
     }
@@ -57,14 +53,14 @@ public class Nci_events_PageActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.action_add) {
 
-            startActivity(new Intent(Nci_events_PageActivity.this, AddEventActivity.class));
+            startActivity(new Intent(Dit_events_PageActivity.this, AddEventActivity.class));
 
         }
 
 
         if (item.getItemId() == R.id.action_home) {
 
-            startActivity(new Intent(Nci_events_PageActivity.this, MainActivity.class));
+            startActivity(new Intent(Dit_events_PageActivity.this, MainActivity.class));
 
         }
 
@@ -82,16 +78,16 @@ public class Nci_events_PageActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<Events, EventsviewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Events, EventsviewHolder>(
+        FirebaseRecyclerAdapter<Events, Dit_events_PageActivity.EventsviewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Events, Dit_events_PageActivity.EventsviewHolder>(
 
                 Events.class,
                 R.layout.event_row,
-                EventsviewHolder.class,
+                Dit_events_PageActivity.EventsviewHolder.class,
                 mDatabase
         ) {
 
             @Override
-            protected void populateViewHolder(EventsviewHolder viewHolder, Events model, int position) {
+            protected void populateViewHolder(Dit_events_PageActivity.EventsviewHolder viewHolder, Events model, int position) {
 
                 viewHolder.setEvent_Title(model.getEvent_Title());
                 viewHolder.setEvent_Details(model.getEvent_Details());
@@ -103,7 +99,7 @@ public class Nci_events_PageActivity extends AppCompatActivity {
             }
         };
 
-        NCI_event_list.setAdapter(firebaseRecyclerAdapter);
+        DIT_event_list.setAdapter(firebaseRecyclerAdapter);
     }
 
     private static class EventsviewHolder extends RecyclerView.ViewHolder {
@@ -151,5 +147,4 @@ public class Nci_events_PageActivity extends AppCompatActivity {
 
 
     }
-
 }
