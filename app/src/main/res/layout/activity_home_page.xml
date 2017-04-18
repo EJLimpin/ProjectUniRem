@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.unirem.unirem.home_page">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="466dp"
+        android:layout_height="689dp"
+        app:srcCompat="@drawable/background"
+        tools:layout_editor_absoluteY="-113dp"
+        tools:layout_editor_absoluteX="-40dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="196dp"
+        android:layout_height="241dp"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login/ Register"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:elevation="0dp"
+        android:text="Button"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="317dp" />
+
+</android.support.constraint.ConstraintLayout>

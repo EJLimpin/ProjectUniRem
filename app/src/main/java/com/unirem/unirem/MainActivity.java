@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main_menutwo, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -93,14 +93,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == buttonDIT) {
 
             //starting login activity
-            startActivity(new Intent(this, Dit_events_PageActivity.class));
+            //startActivity(new Intent(this, Dit_events_PageActivity.class));
 
         }
 
         if (view == buttonDCU) {
 
             //starting login activity
-            startActivity(new Intent(this, Dcu_events_PageActivity.class));
+            //startActivity(new Intent(this, Dcu_events_PageActivity.class));
 
         }
 

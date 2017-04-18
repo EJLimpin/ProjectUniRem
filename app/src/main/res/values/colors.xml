@@ -7,5 +7,6 @@
     <color name="textandstuff">#000000</color>
     <color name="greyoutlin">#8dcdba</color>
     <color name="primary_text_default_material_light">#deffffff</color>
+    <color name="primary_text_default_material_dark">#000000</color>
 
 </resources>
