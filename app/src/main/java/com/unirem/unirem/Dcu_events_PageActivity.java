@@ -31,7 +31,7 @@ public class Dcu_events_PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dcu_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsDCU");
 
         DCU_event_list = (RecyclerView) findViewById(R.id.DCU_event_list);
         DCU_event_list.setHasFixedSize(true);

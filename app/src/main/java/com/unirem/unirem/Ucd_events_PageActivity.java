@@ -31,7 +31,7 @@ public class Ucd_events_PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ucd_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsUCD");
 
         UCD_event_list = (RecyclerView) findViewById(R.id.UCD_event_list);
         UCD_event_list.setHasFixedSize(true);

@@ -31,7 +31,7 @@ public class Tcd_events_PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tcd_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsTCD");
 
         TCD_event_list = (RecyclerView) findViewById(R.id.TCD_event_list);
         TCD_event_list.setHasFixedSize(true);

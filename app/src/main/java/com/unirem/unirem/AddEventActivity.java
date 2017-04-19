@@ -72,7 +72,7 @@ public class AddEventActivity extends AppCompatActivity {
         //firebase
         firebaseAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance().getReference();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Event");
+        mDatabase = FirebaseDatabase.getInstance().getReference("EventsNCI");
 
         tvDropdown = (TextView) findViewById(R.id.tvDropdown);
         imageButtonEvent = (ImageButton) findViewById(R.id.imageButtonEvent);
