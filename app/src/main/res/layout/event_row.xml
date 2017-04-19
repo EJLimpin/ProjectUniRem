@@ -77,7 +77,7 @@
             android:background="@android:color/holo_red_light"
             android:lineSpacingExtra="18sp"
             android:paddingLeft="10dp"
-            android:text="EventDate_Time"
+            android:text="Date and Time"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/holo_red_light"
             android:paddingLeft="10dp"
-            android:text="Privacytype"
+            android:text="Privacy"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="14sp" />

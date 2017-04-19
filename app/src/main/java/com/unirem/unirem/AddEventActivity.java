@@ -84,7 +84,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         //spinner that will hold the privacy type
         spinner = (Spinner) findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource(this, R.array.Privacy_type, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(this, R.array.Privacy, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -204,8 +204,8 @@ public class AddEventActivity extends AppCompatActivity {
                             newPost.child("Event_Title").setValue(etEventTitle_val);
                             newPost.child("Event_Details").setValue(etEventDetails_val);
                             newPost.child("Event_Location").setValue(etEventLocation_val);
-                            newPost.child("Event_Date _and _Time").setValue(etDate_time_Picker_val);
-                            newPost.child("Privacy_type").setValue(spinner_val);
+                            newPost.child("Event_Date_and_Time").setValue(etDate_time_Picker_val);
+                            newPost.child("Privacy").setValue(spinner_val);
                             newPost.child("images").setValue(downloadUrl.toString());
 
                             mProgress.dismiss();

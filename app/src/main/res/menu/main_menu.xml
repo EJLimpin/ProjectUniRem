@@ -8,13 +8,14 @@
         android:title="Home"/>
 
 
-    <item android:id="@+id/action_add"
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_add"
         android:icon="@drawable/adde_icon"
-        app:showAsAction="always"
-        android:title="Add Event"/>
-
-    <item android:id="@+id/action_logout"
-        app:showAsAction="never"
-        android:title="Logout"/>
+        android:title="Add Event"
+        app:showAsAction="always" />
 
 </menu>

@@ -10,15 +10,15 @@ public class Events {
     private String Event_Details;
     private String Event_Location;
     private String Event_Date_and_Time;
-    private String Privacytype;
+    private String Privacy;
     private String images;
 
-    public Events(String event_Title, String event_Details, String event_Location, String event_Date_and_Time, String privacytype, String images) {
+    public Events(String event_Title, String event_Details, String event_Location, String event_Date_and_Time, String privacy, String images) {
         this.Event_Title = event_Title;
         this.Event_Details = event_Details;
         this.Event_Location = event_Location;
         this.Event_Date_and_Time = event_Date_and_Time;
-        this.Privacytype = privacytype;
+        this.Privacy = privacy;
         this.images = images;
     }
 
@@ -59,12 +59,12 @@ public class Events {
         Event_Date_and_Time = event_Date_and_Time;
     }
 
-    public String getPrivacytype() {
-        return Privacytype;
+    public String getPrivacy() {
+        return Privacy;
     }
 
-    public void setPrivacytype(String privacytype) {
-        Privacytype = privacytype;
+    public void setPrivacy(String privacy) {
+        Privacy = privacy;
     }
 
     public String getImages() {

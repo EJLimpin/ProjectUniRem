@@ -93,7 +93,7 @@ public class Dcu_events_PageActivity extends AppCompatActivity {
                 viewHolder.setEvent_Details(model.getEvent_Details());
                 viewHolder.setEvent_Location(model.getEvent_Location());
                 viewHolder.setEvent_Date_and_Time(model.getEvent_Date_and_Time());
-                viewHolder.setPrivacytype(model.getPrivacytype());
+                viewHolder.setPrivacytype(model.getPrivacy());
                 viewHolder.setImages(getApplicationContext(), model.getImages());
 
             }
