@@ -53,7 +53,7 @@ public class Dit_events_PageActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.action_add) {
 
-            startActivity(new Intent(Dit_events_PageActivity.this, AddEventActivity.class));
+            startActivity(new Intent(Dit_events_PageActivity.this, EventsDIT.class));
 
         }
 

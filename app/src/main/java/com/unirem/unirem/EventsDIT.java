@@ -6,9 +6,9 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +37,7 @@ import java.util.Calendar;
 import java.util.UUID;
 
 
-public class AddEventActivity extends AppCompatActivity {
+public class EventsDIT extends AppCompatActivity {
 
 
     private Button btnCreate, btnCancel;
@@ -72,7 +72,7 @@ public class AddEventActivity extends AppCompatActivity {
         //firebase
         firebaseAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance().getReference();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Event");
+        mDatabase = FirebaseDatabase.getInstance().getReference("EventDIT");
 
         tvDropdown = (TextView) findViewById(R.id.tvDropdown);
         imageButtonEvent = (ImageButton) findViewById(R.id.imageButtonEvent);
@@ -121,7 +121,7 @@ public class AddEventActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddEventActivity.this, Nci_events_PageActivity.class));
+                startActivity(new Intent(EventsDIT.this, Nci_events_PageActivity.class));
             }
         });
 
@@ -211,7 +211,7 @@ public class AddEventActivity extends AppCompatActivity {
                             mProgress.dismiss();
                             Toast.makeText(getApplicationContext(), "Event posted", Toast.LENGTH_LONG).show();
 
-                            startActivity(new Intent(AddEventActivity.this, Nci_events_PageActivity.class));
+                            startActivity(new Intent(EventsDIT.this, Nci_events_PageActivity.class));
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -256,7 +256,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.action_home) {
 
-            startActivity(new Intent(AddEventActivity.this, MainActivity.class));
+            startActivity(new Intent(EventsDIT.this, MainActivity.class));
 
         }
 
