@@ -16,13 +16,13 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="146dp"
-        android:background="#FFFFFF"
+        android:background="@color/colorPrimary"
         android:onClick="gotoSecondActivity"
         android:text="Login/Register"
-        android:textSize="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="20dp" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -31,7 +31,7 @@ public class Dit_events_PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dit_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsDIT");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
 
         DIT_event_list = (RecyclerView) findViewById(R.id.DIT_event_list);
         DIT_event_list.setHasFixedSize(true);
