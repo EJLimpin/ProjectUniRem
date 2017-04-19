@@ -35,8 +35,7 @@ public class Nci_events_PageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nci_events__page);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase.child("users").child(userId).child("username").setValue(name;
-        //mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsNCI");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("EventsNCI");
 
         NCI_event_list = (RecyclerView) findViewById(R.id.NCI_event_list);
         NCI_event_list.setHasFixedSize(true);
